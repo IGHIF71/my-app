@@ -32,8 +32,8 @@ function App() {
 
     return rows.filter(
       (row) =>
-        row.firstName.toLowerCase().indexOf(search) > -1 ||
-        row.lastName.toLowerCase().indexOf(search) > -1 
+        row.firstName.toLowerCase().indexOf(search.toLocaleLowerCase()) > -1 ||
+        row.lastName.toLowerCase().indexOf(search.toLocaleLowerCase()) > -1 
     );
 
   }
@@ -46,7 +46,7 @@ function App() {
           <div id='search'>
           <input type = "text" value = {search} onChange={e=> Setsearch(e.target.value)}/>
           </div>
-        <Datatable data = {Search(fetched_students)}/>
+        <Datatable data = {Search(fetched_students)} />
         </div>
        
        

@@ -26,7 +26,7 @@ function App() {
     return () => {
     
     }
-  },[])
+  },[fetched_students])
 
   function Search(rows) {
 
@@ -42,8 +42,14 @@ function App() {
 
     return(
       <div className='wrapper'>
-       <input type = "text" value = {search} onChange={e=> Setsearch(e.target.value)}/>
+        <div className='grid'>
+          <div id='search'>
+          <input type = "text" value = {search} onChange={e=> Setsearch(e.target.value)}/>
+          </div>
         <Datatable data = {Search(fetched_students)}/>
+        </div>
+       
+       
       </div>
     )
     

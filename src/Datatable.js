@@ -13,39 +13,26 @@ export default function Datatable({data}){
      }
     
     return(
-        <table cellPadding={1} cellSpacing={1} className="student_info_table">
-            <thead>
+       <>
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
 
-            </thead>
-
-            <tbody>
-                {data.map (students=> 
-                <tr className="student_info" key = {students.email+students.lastName}>
-                    {
-                        <td> 
-                            <img src = {students.pic} className = "profile_pic"/>
-                        </td>
-                    }
-                    <td>
-                        {students.firstName} {students.lastName}
-                    </td> 
-                    <td>
-                        {students.email}
-                    </td>
-                    <td>
-                        {students.company}
-                    </td>
-                    <td>
-                        {students.skill}
-                    </td>
-                    <td>
-                        {Getaverage(students.grades)}
-                    </td>
-                </tr>
-                )}
-
-            </tbody>
-
-        </table>
+       </>
     )
 }

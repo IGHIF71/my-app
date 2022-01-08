@@ -1,13 +1,29 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Raleway', sans-serif;
+  align-content: center;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.student_info{
+  font-family: 'Raleway', sans-serif;
+  align-content: center;
+}
+.profile_pic{
+  height: auto;
+  Width: 80px;
+}
+.student_info_table{
+  border-radius: 25px;
+  background: #FFFFFF;
+  padding: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.wrapper{
+  background-color: #E1E4E7;
 }

@@ -2,26 +2,15 @@
 import './App.css';
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
-
-
-
+import Datatable from './Datatable'
+import './index.css'
 
 function App() {
 
   let [fetched_students,Setfetched_students] = useState([])
   let [loaded,Setloaded] = useState(false)
+  let [search,Setsearch] = useState("")
 
-  function Checkdata(data){
-    let answer = false
-   try{
-     let num = data[0]
-    answer = true
-   }catch{
-     setTimeout(Checkdata(), 2000)
-   }
-   return answer
-  }
-  
   useEffect(() => {
     async function Setdata(){
 
@@ -37,15 +26,27 @@ function App() {
     return () => {
     
     }
-  },)
+  },[])
+
+  function Search(rows) {
+
+    return rows.filter(
+      (row) =>
+        row.firstName.toLowerCase().indexOf(search) > -1 ||
+        row.lastName.toLowerCase().indexOf(search) > -1 
+    );
+
+  }
 
   if(loaded){
+
     return(
-      <div>
-        <p>done loading</p>
-        <p>{console.log(fetched_students[0].city)}</p>
+      <div className='wrapper'>
+       <input type = "text" value = {search} onChange={e=> Setsearch(e.target.value)}/>
+        <Datatable data = {Search(fetched_students)}/>
       </div>
     )
+    
   }else{
     return(
       <div>

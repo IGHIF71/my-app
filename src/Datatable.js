@@ -16,21 +16,21 @@ export default function Datatable({data}){
       <>
       {data.map (students=> 
       <>
-        <div key = {students.id}>
+        <div  className = 'circletag'key = {students.id}>
             <img src = {students.pic}/>
         </div>
         <div key = {students.id + Getaverage(students.grades) }>
-            <pre>
-                {students.firstName} {students.lastName}
+            
+               <p className='info'> {students.firstName} {students.lastName} </p>
                 <br></br>
-                Email: {students.email}
+                <p className='info'>{students.email}</p>
                 <br></br>
-                Company: {students.company}
+                <p className='info'> Company: {students.company}</p>
                 <br></br>
-                Skill: {students.skill}
+                <p className='info'>Skill: {students.skill}</p>
                 <br></br>
-                Average: {Getaverage(students.grades)}
-            </pre>
+               <p className='info'>Average: {Getaverage(students.grades)}</p>
+           
         </div>
       </>
       )}
